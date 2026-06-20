@@ -20,7 +20,7 @@ export default function AboutTeaser() {
             loading="lazy"
           />
           <div className="about-teaser__media-tag">
-            <span className="about-teaser__media-tag-value">18+</span>
+            <span className="about-teaser__media-tag-value">50+</span>
             <span className="about-teaser__media-tag-label">Years Building<br />With Steel</span>
           </div>
         </Reveal>
