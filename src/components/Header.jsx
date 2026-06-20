@@ -41,7 +41,7 @@ export default function Header() {
             height="48"
           />
           <span className="brand__text">
-           <span className="brand__name">IRON &amp; <em>STEEL</em> Utilities Nig. Ltd.</span>
+           <span className="brand__name">IRON &amp; <em>STEEL</em> UTILITIES NIG. LTD.</span>
           </span>
         </Link>
 

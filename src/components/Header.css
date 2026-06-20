@@ -46,9 +46,9 @@
   align-items: center;
   gap: 12px;
   margin-right: auto;
-  flex-shrink: 0;
+  flex-shrink: 1; /* Changed from 0 to 1 to allow container to shrink */
+  min-width: 0;   /* Prevents the brand container from overflowing */
 }
-
 .brand__mark {
   width: 46px;
   height: 46px;
@@ -66,6 +66,7 @@
   display: flex;
   flex-direction: column;
   line-height: 1;
+  min-width: 0;   /* Ensures text content respects container boundaries */
 }
 
 .brand__name {
@@ -74,6 +75,9 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--color-light);
+  white-space: nowrap; /* Keeps name on one line if possible */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." if the name is too long for the screen */
 }
 
 .brand__name em {
@@ -246,6 +250,17 @@
   }
   .menu-toggle {
     display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand__tag {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .brand__name {
+    font-size: 16px; /* Slightly reduced font size on mobile to prevent overlap */
   }
 }
 
