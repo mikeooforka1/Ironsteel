@@ -1,30 +1,30 @@
 // Central site configuration — edit contact details, links, and copy here.
 
-const WHATSAPP_NUMBER = '2348012345678'; // international format, no + or leading 0s after country code
+const WHATSAPP_NUMBER = '+2348069269727'; // international format, no + or leading 0s after country code
 
 export const SITE = {
-  name: 'IRONSTEEL',
+  name: 'IRON&STEEL',
   fullName: 'Iron & Steel Utilities Nig. Ltd.',
   tagline: 'Structural steel, fabricated for permanence.',
-  phoneRaw: '+2348012345678',
-  phoneDisplay: '+234 801 234 5678',
-  email: 'info@ironsteelutilities.com',
-  address: 'Plot 14, Industrial Layout Road, Aba, Abia State, Nigeria',
+  phoneRaw: '+2348028829527',
+  phoneDisplay: '+234 806 926 9727',
+  email: 'ironsteelnigltd@yahoo.com',
+  address: 'No. 5B Mini - Ewa Road, Trans-Amadi, Rumuobiakani Roundabout, Port Harcourt, Rivers State, Nigeria.',
   whatsappLink: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hello IRONSTEEL, I'd like to discuss a project."
+    "Hello, I’m looking to engage IRON & STEEL for a structural project and would like to request a formal quote and consultation. Are you currently taking on new projects? Looking forward to hearing from you."
   )}`,
   facebook: 'https://facebook.com/ironsteelutilities',
   instagram: 'https://instagram.com/ironsteelutilities',
   linkedin: 'https://linkedin.com/company/ironsteelutilities',
   mapsEmbed:
-    'https://www.google.com/maps?q=Aba,Abia+State,Nigeria&output=embed',
+    'https://maps.app.goo.gl/zfM8xzvyWwmQVT1R7',
 };
 
 export const STATS = [
-  { value: '18+', label: 'Years In Operation' },
-  { value: '240+', label: 'Projects Delivered' },
+  { value: '50+', label: 'Years In Operation' },
+  { value: '300+', label: 'Projects Delivered' },
   { value: '60+', label: 'Skilled Crew & Engineers' },
-  { value: '0', label: 'Compromise On Safety' },
+  { value: '15+', label: ' States Customers Base' },
 ];
 
 export const SERVICES = [
@@ -129,12 +129,40 @@ export const EQUIPMENT = [
     description:
       'Certified scaffold and aerial platform systems for safe, efficient high-level works.',
   },
+  {id: 'transport-fleet',
+    name: 'Transport Fleet',
+    spec: 'Flatbeds, lowboys, and heavy haulers',
+    image: '/assets/images/equipment-5.jpg',
+    description:
+      'Specialized transport for oversized steel components, ensuring safe delivery to site.',
+  },
+  {id: 'fabrication-workshop',
+    name: 'Fabrication Workshop',
+    spec: '10,000 sq ft with overhead cranes',
+    image: '/assets/images/equipment-6.jpg',
+    description:
+      'In-house workshop for controlled-environment fabrication, assembly, and quality assurance.',
+  },  
+  {id: 'inspection-drones',
+    name: 'Inspection Drones',
+    spec: '4K video with thermal imaging',
+    image: '/assets/images/equipment-7.jpg',
+    description:
+      'Aerial inspection capability for hard-to-reach structural elements, improving safety and efficiency.',
+  },
+{id: 'load-testing-rig',
+    name: 'Load Testing Rig',
+    spec: 'Test loads up to 100T',
+    image: '/assets/images/equipment-8.jpg',
+    description:
+      'Dedicated testing equipment for validating structural integrity under simulated load conditions.',
+  },
 ];
 
 // Gallery images — drop additional files into /public/assets/images
 // and add an entry below (or extend this array programmatically).
 export const GALLERY_IMAGES = [
-  { src: '/assets/images/gallery-1.jpg', alt: 'Structural steel framework on site', category: 'Structural' },
+  { src: '/assets/images/gallery-1.jpg', alt: 'Structural steel framework on site', category: 'founder' },
   { src: '/assets/images/gallery-2.jpg', alt: 'Fabrication workshop steel cutting', category: 'Fabrication' },
   { src: '/assets/images/gallery-3.jpg', alt: 'Industrial site utility installation', category: 'Site Works' },
   { src: '/assets/images/gallery-4.jpg', alt: 'Steel beam erection in progress', category: 'Structural' },
@@ -159,16 +187,27 @@ export const HERO_SLIDES = [
   },
   {
     image: '/assets/images/hero-3.jpg',
-    eyebrow: '18+ Years On Industrial Sites',
+    eyebrow: '15+ States Customers Base',
     title: 'Heavy Lifting.\nHandled Right.',
     sub: 'Crawler cranes, certified crews, and a safety record that lets you build at scale without losing sleep.',
+  },
+  {
+    image: '/assets/images/hero-4.jpg',
+    eyebrow: '50+ Years Of Experience',
+    title: 'Building The Future.\nOne Project At A Time.',
+    sub: 'With five decades of experience, we bring a wealth of knowledge and expertise to every project we undertake.',
+  },
+{    image: '/assets/images/hero-5.jpg',
+    eyebrow: 'Nationwide Service',
+    title: 'From Port Harcourt.\nTo All Corners Of Nigeria.',
+    sub: 'Our fleet and crew are equipped to handle projects of any scale, anywhere in Nigeria — from bustling industrial hubs to remote infrastructure sites.',
   },
 ];
 
 export const TESTIMONIALS = [
   {
     quote:
-      'IRONSTEEL erected our warehouse frame two weeks ahead of schedule without a single safety incident. Their crew runs a tight site.',
+      'IRON&STEEL erected our warehouse frame two weeks ahead of schedule without a single safety incident. Their crew runs a tight site.',
     name: 'Chidi Okonkwo',
     role: 'Project Director, Lagos Industrial Park',
   },

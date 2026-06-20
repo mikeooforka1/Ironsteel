@@ -26,10 +26,10 @@ const VALUES = [
 ];
 
 const TIMELINE = [
-  { year: '2008', text: 'Founded as a small structural fabrication outfit serving the Aba industrial corridor.' },
-  { year: '2013', text: 'Expanded into full structural steel erection, taking on our first multi-site contract.' },
-  { year: '2018', text: 'Opened our in-house fabrication workshop, bringing CNC cutting and welding under one roof.' },
-  { year: '2024', text: 'Grew our fleet and crew to support large-format industrial and infrastructure projects nationwide.' },
+  { year: '1976', text: 'Founded as a small structural fabrication outfit serving the local industrial corridor.' },
+  { year: '1982', text: 'Officially commenced operations, becoming a reliable service provider for oil, gas, and industrial companies.' },
+  { year: '1995', text: 'Incorporated under the Companies and Allied Matters Act as Iron & Steel Utilities Ltd. on October 16th.' },
+  { year: '2026', text: 'Celebrating 50 years of operations, continuing to grow our fleet and crew for large-format nationwide projects.' },
 ];
 
 export default function About() {
@@ -37,8 +37,8 @@ export default function About() {
     <>
       <PageHero
         breadcrumb="About"
-        eyebrow="About IRONSTEEL"
-        title="Eighteen Years Of Steel On The Ground"
+        eyebrow="About IRON & STEEL"
+        title="50 Years Of Steel On The Ground"
         sub="Iron & Steel Utilities Nig. Ltd. is a structural steel construction and fabrication company built by engineers who'd rather solve hard problems on site than push paper in an office."
       />
 
@@ -58,11 +58,8 @@ export default function About() {
             </Reveal>
             <Reveal delay={100}>
               <p className="about-page__text">
-                IRONSTEEL started in 2008 as a small fabrication outfit
-                serving local manufacturers around Aba, Abia State. What set
-                us apart early was simple: we refused to subcontract our
-                welding. If our name was on a structure, our own certified
-                crew built it.
+               IRON AND STEEL UTILITIES NIG. LTD is a leading steel fabrication and machine shop company. With over 40 years of operations, we have remained a reliable service provider, leading oil and gas companies in Nigeria such as Schlumberger (SLB), as well as industrial companies such as the Initiate Plc, a company listed on the Nigerian Exchange Limited. 
+Though we started operation in 1982, Iron & Steel Utilities Ltd was incoporated under the companies and allied matters Act of 1990, on 16th October, 1995. We are a company certified under the Nigeiran Oil and Gas Industry Content Joint Qualification System (NOGIC JQS ) as a service company in their oil and gas industry to provide “Rehabilitation and Fabrication”. NNPC, PPMC, SLB, Doley Ventures, Farwel etc. are some of the renowned orgnizations Iron and Steel Utilities is proud to have served over the years and who continue to utilize our services, not only because of our over 40 years experience but because of the quality of our service and our resourcefullness in providing solution to client’s operatioanl challenges.
               </p>
             </Reveal>
             <Reveal delay={160}>

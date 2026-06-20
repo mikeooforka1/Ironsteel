@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="footer-brand">
           <Link to="/" className="footer-brand__mark">
             <img src="/assets/logo/logo.png" alt="IRONSTEEL logo" width="56" height="56" />
-            <span className="footer-brand__name">IRON<em>STEEL</em></span>
+            <span className="footer-brand__name">IRON &amp; <em>STEEL</em></span>
           </Link>
           <p className="footer-brand__desc">
             Structural steel construction, fabrication and industrial site
@@ -45,15 +45,6 @@ export default function Footer() {
               aria-label={`Email us at ${SITE.email}`}
             >
               <FaEnvelope aria-hidden="true" />
-            </a>
-            <a href={SITE.facebook} target="_blank" rel="noopener noreferrer" className="footer-social__icon" aria-label="IRONSTEEL on Facebook">
-              <FaFacebookF aria-hidden="true" />
-            </a>
-            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="footer-social__icon" aria-label="IRONSTEEL on Instagram">
-              <FaInstagram aria-hidden="true" />
-            </a>
-            <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="footer-social__icon" aria-label="IRONSTEEL on LinkedIn">
-              <FaLinkedinIn aria-hidden="true" />
             </a>
           </div>
         </div>

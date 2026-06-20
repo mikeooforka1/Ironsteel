@@ -35,13 +35,13 @@ export default function Header() {
         <Link to="/" className="brand" onClick={() => setMenuOpen(false)}>
           <img
             src="/assets/logo/logo.png"
-            alt="IRONSTEEL — Iron & Steel Utilities Nig. Ltd. logo"
+            alt="IRON&STEEL — Iron & Steel Utilities Nig. Ltd. logo"
             className="brand__mark"
             width="48"
             height="48"
           />
           <span className="brand__text">
-            <span className="brand__name">IRON<em>STEEL</em></span>
+            <span className="brand__name">IRON &amp; <em>STEEL</em></span>
             <span className="brand__tag">Utilities Nig. Ltd.</span>
           </span>
         </Link>

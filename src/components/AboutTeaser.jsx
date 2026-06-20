@@ -34,11 +34,8 @@ export default function AboutTeaser() {
           </Reveal>
           <Reveal delay={100}>
             <p className="about-teaser__text">
-              For over eighteen years, IRONSTEEL has delivered structural
-              steel construction, fabrication, and industrial site services
-              across Nigeria. We operate as both contractor and fabricator —
-              meaning the steel that goes up on your site was cut, welded,
-              and inspected by the same team that erects it.
+             Iron and Steel is a diversified global conglomarate with a legacy of over 50 years of business excellence and sustainable growth. It is headquartered in Port-Harcourt, River State Nigeria.
+ It is commited towards the nurturing and develoment of the local community.
             </p>
           </Reveal>
           <Reveal delay={180}>

@@ -17,22 +17,52 @@ const SERVICE_OPTIONS = [
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: SERVICE_OPTIONS[0], message: '' });
-  const [status, setStatus] = useState('idle'); // idle | submitting | sent
+  const [status, setStatus] = useState('idle'); // idle | submitting | sent | error
 
   const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('submitting');
-    // No backend wired yet — this composes a mailto with the message body.
-    const subject = encodeURIComponent(`Project Inquiry: ${form.service}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nService: ${form.service}\n\nMessage:\n${form.message}`
-    );
-    window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
-    setStatus('sent');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          // REQUIRED: Replace this string with the actual Web3Forms access key tied to the company email
+          access_key: "0ea7d770-404b-42d8-b53e-01e679ed3639", 
+          subject: `New Quote Request: ${form.service}`,
+          from_name: form.name,
+          email: form.email,
+          phone: form.phone,
+          service: form.service,
+          message: form.message,
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus('sent');
+        // Clear the form on successful submission
+        setForm({ name: '', email: '', phone: '', service: SERVICE_OPTIONS[0], message: '' });
+        
+        // Optional: Reset status back to idle after a few seconds
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        console.error("Form submission failed:", result);
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error("Network error during form submission:", error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -98,10 +128,10 @@ export default function Contact() {
             <div className="contact-map bracket-frame">
               <iframe
                 src={SITE.mapsEmbed}
-                title="IRONSTEEL location map"
+                title="IRON &amp; STEEL location map"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                aria-label="Map showing IRONSTEEL's location"
+                aria-label="Map showing IRON&STEEL's location"
               />
             </div>
           </Reveal>
@@ -153,12 +183,17 @@ export default function Contact() {
               </label>
 
               <button type="submit" className="btn btn--primary btn--block" disabled={status === 'submitting'}>
-                {status === 'submitting' ? 'Opening Email…' : 'Send Inquiry'}
+                {status === 'submitting' ? 'Sending Request...' : 'Send Inquiry'}
               </button>
 
               {status === 'sent' && (
-                <p className="contact-form__status" role="status">
-                  Your email client should now be open with your message ready to send.
+                <p className="contact-form__status success-text" role="status" style={{ color: 'green', marginTop: '1rem' }}>
+                  Your request has been sent successfully. We will be in touch shortly.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="contact-form__status error-text" role="status" style={{ color: 'red', marginTop: '1rem' }}>
+                  There was an error sending your request. Please try again or contact us directly.
                 </p>
               )}
             </form>
