@@ -1,0 +1,15 @@
+{
+  "short_name": "IRONSTEEL",
+  "name": "IRONSTEEL | Iron & Steel Utilities Nig. Ltd.",
+  "icons": [
+    {
+      "src": "assets/logo/logo.png",
+      "type": "image/png",
+      "sizes": "600x600"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0D1117",
+  "background_color": "#0D1117"
+}

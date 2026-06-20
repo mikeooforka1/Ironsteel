@@ -1,0 +1,136 @@
+.about-page__intro-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.about-page__media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  margin: 14px;
+}
+
+.about-page__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-page__text {
+  font-size: 16px;
+  color: var(--color-steel);
+  margin: 0 0 22px;
+  max-width: 58ch;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--color-line);
+  border: 1px solid var(--color-line);
+}
+
+.value-card {
+  background: var(--color-panel);
+  padding: 40px 30px;
+}
+
+.value-card__index {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-red-bright);
+  margin-bottom: 18px;
+}
+
+.value-card__title {
+  font-size: 19px;
+  color: var(--color-light);
+  margin-bottom: 12px;
+}
+
+.value-card__desc {
+  font-size: 14px;
+  color: var(--color-steel);
+}
+
+.timeline-section {
+  background: var(--color-panel);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 90px 24px 1fr;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.timeline__item:last-child {
+  border-bottom: none;
+}
+
+.timeline__year {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--color-amber);
+}
+
+.timeline__line {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline__line::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  margin-top: 8px;
+  background: var(--color-red);
+  transform: rotate(45deg);
+}
+
+.timeline__text {
+  font-size: 15.5px;
+  color: var(--color-steel);
+  max-width: 64ch;
+  padding-top: 4px;
+}
+
+@media (max-width: 1024px) {
+  .about-page__intro-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .about-page__media {
+    max-width: 480px;
+    aspect-ratio: 16/10;
+  }
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline__item {
+    grid-template-columns: 70px 20px 1fr;
+  }
+  .timeline__year {
+    font-size: 19px;
+  }
+}

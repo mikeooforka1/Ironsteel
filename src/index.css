@@ -1,0 +1,136 @@
+/* ===================================================================
+   IRONSTEEL — Global Design Tokens
+   Palette: gunmetal dark, charcoal panel, structural red, safety amber
+=================================================================== */
+
+:root {
+  /* Color */
+  --color-dark: #0d1117;          /* gunmetal — primary background */
+  --color-panel: #1c2128;         /* charcoal — card / section panels */
+  --color-panel-raised: #242a32;  /* slightly raised panel */
+  --color-red: #c0392b;           /* structural red — brand accent */
+  --color-red-bright: #d9483a;
+  --color-amber: #f5a623;         /* safety amber — secondary accent */
+  --color-amber-dim: #c8860f;
+  --color-steel: #8b95a1;         /* cold steel grey — secondary text */
+  --color-steel-dim: #5b6470;
+  --color-light: #e8e6e1;         /* warm steel-white — primary text on dark */
+  --color-white: #ffffff;
+  --color-line: rgba(232, 230, 225, 0.1);
+  --color-line-strong: rgba(232, 230, 225, 0.18);
+
+  /* Type */
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Layout */
+  --container-width: 1280px;
+  --header-height: 88px;
+  --header-height-scrolled: 68px;
+
+  /* Motion */
+  --ease-steel: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.2s var(--ease-steel);
+  --transition-medium: 0.4s var(--ease-steel);
+  --transition-slow: 0.7s var(--ease-steel);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+/* Visible keyboard focus — accessibility floor */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-panel-raised);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-steel-dim);
+}
